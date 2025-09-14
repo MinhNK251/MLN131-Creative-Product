@@ -19,9 +19,9 @@ export const HeroParallax = ({
     thumbnail: string;
   }[];
 }) => {
-  const firstRow = products.slice(0, 5);
-  const secondRow = products.slice(5, 10);
-  const thirdRow = products.slice(10, 15);
+  const firstRow = products.slice(0, 2);
+  const secondRow = products.slice(2, 4);
+  const thirdRow = products.slice(4, 6);
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -31,7 +31,7 @@ export const HeroParallax = ({
   const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
   const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 1000]),
+    useTransform(scrollYProgress, [1, 2], [0, 1000]),
     springConfig
   );
   const translateXReverse = useSpring(
@@ -43,7 +43,7 @@ export const HeroParallax = ({
     springConfig
   );
   const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
+    useTransform(scrollYProgress, [0, 0.2], [0.2, 0.2]),
     springConfig
   );
   const rotateZ = useSpring(
@@ -57,17 +57,19 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-full overflow-hidden antialiased relative flex flex-row self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
-      <Header />
+      <div className="w-1/2 flex items-center">
+        <Header />
+      </div>
       <motion.div
         style={{
           rotateX,
           rotateZ,
-          translateY,
+          // translateY,
           opacity,
         }}
-        className=""
+        className="w-1/2 md:pe-10"
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
           {firstRow.map((product, index) => (
@@ -78,11 +80,11 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
           {secondRow.map((product, index) => (
             <ProductCard
               product={product}
-              translate={translateXReverse}
+              translate={translateX}
               key={`${product.title}-${index}`}
             />
           ))}
@@ -103,16 +105,31 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold text-black">
-        Sự thành công của một quốc gia <br /> không nằm ở tài nguyên <br /> mà
-        nằm ở con người
+    <div className="max-w-7xl relative mx-auto py-20 px-4 w-full left-0 top-0">
+      <h1 className="text-2xl md:text-6xl font-bold text-black">
+        Giai cấp công nhân trong thời đại công nghệ số
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 text-black">
-        <strong>Nelson Mandela</strong> từng khẳng định: “Giáo dục 🏫 là vũ khí
-        mạnh nhất mà bạn có thể sử dụng để thay đổi thế giới.” Việc đầu tư vào
-        con người chính là chìa khóa để mở ra cánh cửa phát triển cho mọi xã
-        hội.
+
+      <p className="max-w-3xl text-base md:text-xl mt-8 text-black leading-relaxed">
+        Trong thời đại công nghệ số, với sự bùng nổ của cuộc cách mạng công nghiệp 4.0, 
+        các công nghệ như trí tuệ nhân tạo (AI), robot, tự động hóa, Internet of Things (IoT) 
+        đang làm thay đổi sâu sắc phương thức sản xuất trên phạm vi toàn cầu. 
+        Mặc dù một số công việc tay chân, lặp đi lặp lại có nguy cơ bị thay thế, 
+        nhưng giai cấp công nhân không hề biến mất mà đang biến đổi mạnh mẽ về cơ cấu, trình độ và vai trò:
+        <br /><br />
+        • <strong>Chuyển đổi từ lao động cơ bắp sang lao động tri thức – kỹ thuật cao</strong>: 
+        Xuất hiện các loại hình công nhân mới như công nhân công nghệ thông tin, kỹ sư phần mềm, 
+        kỹ thuật viên vận hành hệ thống tự động hóa, chuyên gia dữ liệu...
+        <br />
+        • <strong>Giữ vai trò then chốt trong lực lượng sản xuất hiện đại</strong>: 
+        Máy móc và AI vẫn cần con người thiết kế, lập trình, giám sát, vận hành và bảo trì.
+        <br />
+        • <strong>Lực lượng tiên phong trong chuyển đổi số và đổi mới sáng tạo</strong>: 
+        Giai cấp công nhân hiện đại góp phần thúc đẩy quá trình số hóa, 
+        tạo ra sản phẩm – dịch vụ tiên tiến, góp phần phát triển bền vững.
+        <br /><br />
+        Quan điểm Mác – Lênin về vai trò lịch sử của giai cấp công nhân vẫn còn nguyên giá trị cốt lõi, 
+        nhưng phương thức thực hiện sứ mệnh của họ đã thay đổi, đòi hỏi sự nâng cấp về trí tuệ, kỹ năng và khả năng thích ứng.
       </p>
     </div>
   );
@@ -138,7 +155,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative flex-shrink-0"
+      className="group/product h-60 w-64 relative flex-shrink-0"
     >
       <Link
         href={product.link}

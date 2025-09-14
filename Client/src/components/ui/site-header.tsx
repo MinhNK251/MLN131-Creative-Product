@@ -18,22 +18,22 @@ const navigation = [
   {
     id: "definition",
     label: "Khái niệm",
-    hrefs: ["#analysis"],
+    hrefs: ["#definition"],
   },
   {
-    id: "role",
-    label: "Vai trò",
-    hrefs: ["#role"],
+    id: "mission",
+    label: "Sứ mệnh lịch sử",
+    hrefs: ["#mission"],
   },
   {
-    id: "development",
-    label: "Phát triển",
-    hrefs: ["#development"],
+    id: "progress",
+    label: "Tiến bộ",
+    hrefs: ["#progress"],
   },
   {
-    id: "opinion",
-    label: "Quan điểm",
-    hrefs: ["#opinion"],
+    id: "opportunities-challenges",
+    label: "Cơ hội và thách thức",
+    hrefs: ["#opportunities-challenges"],
   },
   // {
   //   id: "conclusion",
@@ -83,7 +83,7 @@ export function SiteHeader() {
                   src="/assets/image/logo.jpg"
                 />
               </div>
-              <span className="font-bold  sm:inline">Dominators</span>
+              <span className="font-bold  sm:inline">MLN131 - SE1735 - Team 1</span>
             </Link>
           </div>
 

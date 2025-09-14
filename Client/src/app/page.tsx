@@ -34,9 +34,8 @@ export default function HorizontalScroll(): JSX.Element {
         />
       </div>
       <div className={`relative ${isLoading ? "hidden" : "block w-full"}`}>
-        <ChatBotIntegration />
+        {/* <ChatBotIntegration /> */}
         <SiteHeader />
-        {/* <FloatingDockDemo /> */}
 
         <main>
           <section
@@ -53,47 +52,25 @@ export default function HorizontalScroll(): JSX.Element {
               </div>
             </div>
           </section>
-          <section id="welcome-header">
-            <div className=" bg-black w-full overflow-hidden">
-              <InfinityBrand />
-            </div>
+
+          <section id="definition">
+            <OpinionSection />
+            <DevelopmentSection />
           </section>
 
-          <section id="analysis">
-            <>
-              <div
-                id="welcome-content"
-                className="bg-black text-center"
-                style={{
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/image/main-sentence.jpg')`,
-                  backgroundSize: "cover",
-                  height: "100vh",
-                  backgroundPosition: "center",
-                  filter: "brightness(90%)",
-                  minHeight: "100vh",
-                }}
-              >
-                <Introduction />
-              </div>
-              <OpinionSection />
-              <DevelopmentSection />
-            </>
+          <section id="mission" className="bg-white-300">
+            <ConclusionSection />
           </section>
 
-          <section id="role" className="bg-white-300">
-            <LampDemo />
-            <TimelineDemo />
-            {/* <TimelineAnimation /> */}
+          <section id="progress" className="bg-white-300 my-5">
             <HeroParallaxDemo />
           </section>
 
-          <section id="development" className="my-5">
-            <GoogleGeminiEffectDemo />
-            <TracingBeamDemo />
-          </section>
-
-          <section id="opinion" className="bg-black">
-            <ConclusionSection />
+          <section id="opportunities-challenges" className="bg-black">
+            <div className="h-[20vh]">
+              <LampDemo />
+            </div>
+            <TimelineDemo />
           </section>
           <div className="text-center py-8 bg-black">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold animate-gradient bg-gradient-to-r from-yellow-400 via-red-500 to-pink-600 bg-clip-text text-transparent">

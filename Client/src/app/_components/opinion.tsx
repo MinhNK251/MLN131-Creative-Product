@@ -14,27 +14,26 @@ export default function OpinionSection(): JSX.Element {
             <div className="flex flex-col lg:flex-row w-full max-w-7xl mx-auto items-center gap-8 lg:gap-12">
               <blockquote className="lg:w-[58.33%] text-lg sm:text-xl lg:text-2xl 2xl:text-3xl font-medium text-left leading-relaxed tracking-wide">
                 <p className="mb-6">
-                  🌱 Câu nói{" "}
+                  🏭 Theo{" "}
                   <span className="text-green-500 font-semibold">
-                    &quot;Vì lợi ích mười năm trồng cây, vì lợi ích trăm năm
-                    trồng người&quot;
-                  </span>{" "}
-                  hàm chứa một triết lý sâu sắc về mối quan hệ giữa con người và
-                  sự phát triển bền vững của xã hội. ✅
+                    chủ nghĩa Mác – Lênin
+                  </span>
+                  , giai cấp công nhân là một tập đoàn xã hội đặc thù, hình
+                  thành và phát triển gắn liền với sự ra đời và lớn mạnh của nền
+                  công nghiệp hiện đại.
                 </p>
                 <p>
-                  🤔 Từ góc nhìn triết học, con người không chỉ là cá thể sinh
-                  học mà còn là chủ thể xã hội, có ý thức, giá trị và tiềm năng
-                  phát triển vượt bậc. 🌟 Việc &quot;trồng người&quot; chính là
-                  đầu tư vào giáo dục, đạo đức, và sự phát triển toàn diện của
-                  con người để xây dựng một xã hội tiến bộ, công bằng và nhân
-                  văn.
+                  ⚒️ Họ sử dụng máy móc, công nghệ tiên tiến để sản xuất ra của
+                  cải vật chất, đặc biệt là các sản phẩm công nghiệp, đóng vai
+                  trò chủ đạo trong nền kinh tế. Tuy nhiên, khác với giai cấp tư
+                  sản, công nhân không có quyền sở hữu đối với nhà máy, xí
+                  nghiệp mà buộc phải bán sức lao động để mưu sinh.
                 </p>
               </blockquote>
 
               <img
                 src="/assets/image/cau mo dau.jpg"
-                alt="Philosophy Illustration"
+                alt="Công nhân công nghiệp hiện đại"
                 className="w-full lg:w-[41.67%] rounded-lg shadow-md"
               />
             </div>
@@ -45,22 +44,17 @@ export default function OpinionSection(): JSX.Element {
           <div className="flex flex-col lg:flex-row px-4 lg:px-16 max-w-7xl mx-auto">
             <div className="lg:sticky lg:top-0 lg:h-screen grid place-content-center w-full lg:w-1/2 py-8 lg:py-0">
               <p className="text-lg sm:text-xl lg:text-2xl px-0 lg:px-8 font-medium text-left tracking-tight leading-relaxed">
-                <span className="font-bold">🌟 Con người</span>, trong triết
-                học, là thực thể trung tâm với giá trị vượt thời gian, đóng vai
-                trò quan trọng trong mọi lĩnh vực.
-                <span className="font-bold">💡 Triết học</span> khám phá bản
-                chất con người qua:
+                <span className="font-bold">🌟 Giai cấp công nhân, </span>, theo chủ nghĩa Mác – Lênin, họ:
                 <br />
-                <span className="font-bold">- 🧠 Tự do cá nhân</span>
+                <span className="font-bold">- 🏭 Là sản phẩm của nền đại công nghiệp</span>
                 <br />
-                <span className="font-bold">- 🌈 Trách nhiệm xã hội</span>
+                <span className="font-bold">- 🌈 Đóng vai trò chủ đạo trong nền kinh tế</span>
                 <br />
-                <span className="font-bold">- 📚 Giáo dục</span>
+                <span className="font-bold">- 🚫 Không sở hữu tư liệu sản xuất</span>
                 <br />
-                <span className="font-bold">- ⚒️ Lao động</span>
+                <span className="font-bold">- 💰 Bị bóc lột giá trị thặng dư</span>
                 <br />
-                Những khái niệm cơ bản này giúp định hình tư duy và hành động
-                của xã hội.
+                <span className="font-bold">- ⚡ Có mâu thuẫn thúc đẩy đấu tranh giai cấp</span>
               </p>
             </div>
 
@@ -69,33 +63,33 @@ export default function OpinionSection(): JSX.Element {
                 {
                   bg: "bg-green-500",
                   rotate: "rotate-6",
-                  title: "🌱 Con người là một thực thể tự do",
+                  title: "🏭 Gắn liền với công nghiệp hiện đại",
                   image: "phantich1.jpg",
                 },
                 {
                   bg: "bg-red-400",
                   rotate: "-rotate-6",
-                  title: "🔥 Con người là cứu cánh, không phải phương tiện",
+                  title: "⚒️ Sản xuất ra của cải vật chất",
                   image: "phantich2.jpg",
                 },
                 {
                   bg: "bg-orange-400",
                   rotate: "rotate-5",
                   title:
-                    "📚 Giáo dục là công cụ để phát triển bản chất con người",
+                    "🚫 Không sở hữu tư liệu sản xuất",
                   image: "phantich3.jpg",
                 },
                 {
                   bg: "bg-blue-400",
                   rotate: "-rotate-5",
-                  title: "🌍 Con người là sinh vật chính trị và sáng tạo",
+                  title: "💰 Bị bóc lột giá trị thặng dư",
                   image: "phantich4.jpg",
                 },
                 {
                   bg: "bg-purple-400",
                   rotate: "rotate-6",
                   title:
-                    "🌟 Phát triển con người gắn liền với sự phát triển xã hội",
+                    "⚡ Mâu thuẫn thúc đẩy đấu tranh giai cấp",
                   image: "phantich5.jpg",
                 },
 
