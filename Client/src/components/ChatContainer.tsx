@@ -3,22 +3,17 @@ import { formatMessageTime } from "../lib/utils";
 import toast from "react-hot-toast";
 import { useChatContext } from "@/context/ChatContext";
 
-interface ChatMessage {
-  sender: "user" | "ai";
-  text: string;
-  createdAt: string;
-}
-
 const ChatContainer = () => {
-  const { sendMessage, messages, setMessages } = useChatContext();
+  const { sendMessage, messages } = useChatContext();
   const [input, setInput] = useState("");
   const messagesContainerRef = useRef<HTMLDivElement | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-  const container = messagesContainerRef.current;
-  if (container) {
-    container.scrollTop = container.scrollHeight;
-  }
+    const container = messagesContainerRef.current;
+    if (container) {
+      container.scrollTop = container.scrollHeight;
+    }
   }, [messages]);
 
   const handleSendMessage = async (e?: React.FormEvent) => {
@@ -26,26 +21,15 @@ const ChatContainer = () => {
     const content = input.trim();
     if (!content) return;
 
-    const userMsg: ChatMessage = {
-      sender: "user" as const,
-      text: content,
-      createdAt: new Date().toISOString(),
-    };
-
-    setMessages((prev) => [...prev, userMsg]);
     setInput("");
+    setIsLoading(true);
 
     try {
-      // Send to API and get AI reply text
-      const aiText = await sendMessage(content);
-      const aiMsg = {
-        sender: "ai" as const,
-        text: aiText,
-        createdAt: new Date().toISOString(),
-      };
-      setMessages((prev) => [...prev, aiMsg]);
+      await sendMessage(content);
     } catch (err: any) {
       toast.error(err.message || "Failed to send");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -74,6 +58,13 @@ const ChatContainer = () => {
             </div>
           </div>
         ))}
+        {isLoading && (
+          <div className="flex items-end gap-2 mb-4 justify-start">
+            <div className="p-2 max-w-[250px] md:text-sm font-light rounded-lg break-words text-white bg-gray-700 rounded-bl-none">
+              Thinking...
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Input area */}
@@ -89,9 +80,10 @@ const ChatContainer = () => {
             type="text"
             placeholder="Send a message"
             className="flex-1 text-sm p-3 border-none rounded-lg outline-none text-black placeholder-gray-400"
+            disabled={isLoading}
           />
         </div>
-        <button type="submit">
+        <button type="submit" disabled={isLoading}>
           <img src="/assets/image/logo.jpg" alt="avatar" className="w-7 cursor-pointer" />
         </button>
       </form>

@@ -19,8 +19,32 @@ export const ChatProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [messages, setMessages] = useState<ChatMessage[]>([]);
 
   const sendMessage = async (text: string) => {
-    const res = await sendMessageApi({ message: text });
-    return res.message;
+    // Add user message to state
+    const userMsg: ChatMessage = {
+      sender: "user" as const,
+      text: text,
+      createdAt: new Date().toISOString(),
+    };
+    
+    setMessages(prev => [...prev, userMsg]);
+    
+    try {
+      // Send to API and get AI reply text
+      const res = await sendMessageApi({ message: text });
+      
+      // Add AI message to state
+      const aiMsg: ChatMessage = {
+        sender: "ai" as const,
+        text: res.text,
+        createdAt: new Date().toISOString(),
+      };
+      
+      setMessages(prev => [...prev, aiMsg]);
+      return res.text;
+    } catch (error) {
+      console.error("Failed to send message:", error);
+      throw error;
+    }
   };
 
   return (

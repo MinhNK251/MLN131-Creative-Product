@@ -4,7 +4,7 @@ export interface SendMessageRequest {
   message: string;
 }
 export interface SendMessageResponse {
-  message: string;
+  text: string;
 }
 
 export async function sendMessageApi(
