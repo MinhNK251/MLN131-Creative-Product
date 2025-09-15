@@ -16,6 +16,8 @@ import { HeroParallaxDemo } from "./_components/hero-parallax";
 import { GoogleGeminiEffectDemo } from "./_components/google-gemini-effect";
 import PlantLoader from "@/components/ui/plant-loader";
 import ChatBotIntegration from "@/app/_components/chat-bot";
+import ChatContainer from "@/components/ChatContainer";
+import { ChatProvider } from "@/context/ChatContext";
 export default function HorizontalScroll(): JSX.Element {
   const [isLoading, setIsLoading] = useState(true);
   return (
@@ -72,6 +74,15 @@ export default function HorizontalScroll(): JSX.Element {
             </div>
             <TimelineDemo />
           </section>
+
+          <section id="chat" className="bg-black">
+            <div className={`h-screen w-full sm:px-[15%] sm:py-[5%]`}>
+              <ChatProvider>
+                <ChatContainer />
+              </ChatProvider>
+            </div>
+          </section>
+
           <div className="text-center py-8 bg-black">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold animate-gradient bg-gradient-to-r from-yellow-400 via-red-500 to-pink-600 bg-clip-text text-transparent">
               Thank you for watching!

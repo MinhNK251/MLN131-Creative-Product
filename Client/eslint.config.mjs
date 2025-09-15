@@ -12,6 +12,7 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
+    plugins: ["react-refresh"],
     rules: {
       "@typescript-eslint/no-unused-vars": [
         "warn", // or "error"
@@ -21,6 +22,7 @@ const eslintConfig = [
           caughtErrorsIgnorePattern: "^_", // ignore unused catch(err)
         },
       ],
+      "react-refresh/only-export-components": "off",
     },
   },
 ];
