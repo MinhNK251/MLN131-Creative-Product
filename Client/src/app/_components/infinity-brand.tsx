@@ -9,7 +9,7 @@ function InfinityBrand() {
     },
     {
       href: "/",
-      src: "/assets/image/logo.jpg",
+      src: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lenin-Silhoutte_.svg",
       alt: "Logo",
     },
     {

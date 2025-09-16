@@ -21,21 +21,21 @@ const items = [
     title: "💰 Kinh tế",
     desc: 'Giải phóng triệt để lực lượng sản xuất, phát triển sản xuất hiện đại trên cơ sở công hữu về tư liệu sản xuất, tạo tiền đề vật chất – kỹ thuật dồi dào cho một xã hội mới không có đói nghèo và thiếu thốn.',
     sliderName: "Kinh tế",
-    src: "/assets/image/conclusion1.jpg",
+    src: "/assets/image/economy.jpg",
   },
   {
     icon: <Home />,
     title: "⚖️ Chính trị – Xã hội",
     desc: "Lãnh đạo cách mạng lật đổ ách thống trị của giai cấp tư sản, giành chính quyền về tay nhân dân lao động, thiết lập nhà nước kiểu mới (chuyên chính vô sản) để thực hiện dân chủ, công bằng và tiến bộ xã hội, xây dựng nền dân chủ rộng rãi cho đại đa số.",
     sliderName: "Chính trị – Xã hội",
-    src: "/assets/image/conclusion2.jpg",
+    src: "/assets/image/politic.jpg",
   },
   {
     icon: <Home />,
     title: "📚 Văn hóa – Tư tưởng",
     desc: "Xây dựng hệ giá trị mới (lao động, công bằng, dân chủ, bình đẳng, tự do) dựa trên nền tảng chủ nghĩa Mác – Lênin, xóa bỏ các tàn dư tư tưởng lạc hậu, phản động, xác lập ý thức hệ khoa học và cách mạng.",
     sliderName: "Văn hóa – Tư tưởng",
-    src: "/assets/image/conclusion3.jpg",
+    src: "/assets/image/culture.jpg",
   },
 ];
 
@@ -138,10 +138,10 @@ export default function ConclusionSection() {
                   value={item?.sliderName}
                 >
                   <Image
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover rounded-lg pe-10"
                     src={item?.src || "/placeholder.svg"}
-                    width={1900}
-                    height={1080}
+                    width={16}
+                    height={9}
                     alt={item.sliderName}
                     priority={index === 0}
                     sizes="(max-width: 768px) 100vw, 50vw"

@@ -16,7 +16,7 @@ import { HeroParallaxDemo } from "./_components/hero-parallax";
 import { GoogleGeminiEffectDemo } from "./_components/google-gemini-effect";
 import PlantLoader from "@/components/ui/plant-loader";
 import ChatBotIntegration from "@/app/_components/chat-bot";
-import ChatContainer from "@/components/ChatContainer";
+import ChatContainer from "@/components/ui/ChatContainer";
 import { ChatProvider } from "@/context/ChatContext";
 export default function HorizontalScroll(): JSX.Element {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,7 +45,7 @@ export default function HorizontalScroll(): JSX.Element {
             className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden"
           >
             <LazyVideo
-              src="/assets/videos/bonme.mp4"
+              src="/assets/videos/video.mp4"
               className="absolute top-0 left-0 w-full h-full object-cover z-0"
             />
             <div className="container relative z-10 mx-auto px-4">
@@ -75,8 +75,13 @@ export default function HorizontalScroll(): JSX.Element {
             <TimelineDemo />
           </section>
 
-          <section id="chat" className="bg-black">
-            <div className={`h-screen w-full sm:px-[15%] sm:py-[5%]`}>
+          <section id="chat" className="bg-slate-950">
+            <section className="text-white w-full bg-slate-950 grid place-content-center px-4 pt-10">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl px-4 sm:px-8 font-semibold text-center tracking-tight leading-[120%]">
+                MLN AI Chatbot
+              </h1>
+            </section>
+            <div className={`h-[90vh] w-full sm:px-[15%] sm:py-[5%]`}>
               <ChatProvider>
                 <ChatContainer />
               </ChatProvider>
@@ -85,10 +90,10 @@ export default function HorizontalScroll(): JSX.Element {
 
           <div className="text-center py-8 bg-black">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold animate-gradient bg-gradient-to-r from-yellow-400 via-red-500 to-pink-600 bg-clip-text text-transparent">
-              Thank you for watching!
+              Cảm ơn bạn vì đã ghé thăm web!
             </h2>
             <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mt-4">
-              We appreciate your time and hope you enjoyed the presentation.
+              Chúng tôi trân trọng thời gian của bạn và hy vọng bạn thích trang web này.
             </p>
             <div className="flex justify-center mt-4">
               <svg

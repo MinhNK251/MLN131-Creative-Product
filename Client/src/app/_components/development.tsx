@@ -10,28 +10,28 @@ const projects = [
     title: "Lao động bằng máy móc, năng suất cao",
     description:
       "Gắn liền với công nghệ hiện đại, công nhân làm việc có năng suất cao, tạo ra khối lượng sản phẩm khổng lồ.",
-    link: "/assets/image/Aristotle.jpg",
+    link: "/assets/image/factory.jpg",
     color: "#5196fd",
   },
   {
     title: "Tính tổ chức – kỷ luật – hợp tác cao",
     description:
       "Môi trường làm việc trong các nhà máy, xí nghiệp đòi hỏi sự phối hợp chặt chẽ, tuân thủ kỷ luật và tinh thần hợp tác, tạo nên sức mạnh tập thể.",
-    link: "/assets/image/ImmanuelKant.jpg",
+    link: "/assets/image/order.jpg",
     color: "#8f89ff",
   },
   {
     title: "Là sản phẩm và chủ thể của nền đại công nghiệp",
     description:
       "Giai cấp công nhân vừa là kết quả của sự phát triển công nghiệp, vừa là lực lượng trực tiếp thúc đẩy sự phát triển đó, đại diện cho lực lượng sản xuất tiên tiến và phương thức sản xuất hiện đại.",
-    link: "/assets/image/Jean-Jacques-Rousseau.jpg",
+    link: "/assets/image/product-of-technology.webp",
     color: "#4caf50",
   },
   {
     title: "Có tính cách mạng triệt để",
     description:
       "Do địa vị kinh tế – xã hội của mình, họ không có gì để mất ngoài xiềng xích, nên có tinh thần đấu tranh không khoan nhượng, có đủ phẩm chất để lãnh đạo cách mạng xã hội.",
-    link: "/assets/image/JohnDewey.jpg",
+    link: "/assets/image/revolutionary-hcm.jpg",
     color: "#ed649e",
   },
 ];
@@ -123,7 +123,7 @@ export const Card: React.FC<CardProps> = ({
             <p className="text-base sm:text-2xl">{description}</p>
           </div>
 
-          <div className="relative w-[300px] aspect-[4/3] rounded-lg overflow-hidden ms-10">
+          <div className="relative lg:w-[300px] md:w-[300px] sm:w-[400px] lg:aspect-[4/3] md:aspect-[4/3] sm:aspect-[5/3] rounded-lg overflow-hidden ms-10">
             <motion.div className="w-full h-full" style={{ scale: imageScale }}>
               <Image
                 fill

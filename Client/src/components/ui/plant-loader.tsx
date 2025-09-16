@@ -47,22 +47,22 @@ export default function PlantLoader({
   }, [minimumLoadingTime, onLoadingComplete]);
 
   return (
-    <div className="flex min-h-[250px] min-w-[160px] flex-col items-center justify-center gap-6 p-4">
-      <div className="relative h-20 min-w-[160px]">
+    <div className="flex min-h-[250px] min-w-[160px] flex-col items-center justify-center">
+      <div className="relative h-80 min-w-[160px]">
         <Image
-          src="/assets/gif/plant.gif"
-          alt="Loading animation of a growing plant"
+          src="/assets/gif/lenin.gif"
+          alt="Loading animation of Lenin"
           fill
           className="object-contain"
           priority
         />
       </div>
-      <div className="w-full max-w-[160px] space-y-2">
+      <div className="w-full max-w-[160px]">
         <Progress value={progress} className="h-2" />
         <p className="text-center text-sm text-muted-foreground">
           {isComplete
             ? "Sẳn sàng!"
-            : `Đang gieo hạt... ${Math.round(progress)}%`}
+            : `Đang tải... ${Math.round(progress)}%`}
         </p>
       </div>
     </div>

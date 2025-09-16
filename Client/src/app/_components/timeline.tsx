@@ -8,10 +8,7 @@ import { TimelineContent } from "@/components/ui/framer-timeline";
 import Image from "next/image";
 
 function TimelineAnimation() {
-  {
-    /*const aboutRef = useRef<HTMLDivElement | null>(null);*/
-  } // Explicit type for aboutRef
-  const heroRef = useRef<HTMLDivElement | null>(null); // Explicit type for heroRef
+  const heroRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <>
@@ -46,24 +43,6 @@ function TimelineAnimation() {
           </TimelineContent>
         </div>
       </section>
-      {/*<section ref={aboutRef} className="sm:grid grid-cols-2 gap-10 pb-10 px-4">
-        <div className="space-y-2">
-          {" "}
-          <TimelineContent animationNum={2} timelineRef={aboutRef}>
-            <p className="text-xl leading-[350%]">
-            <p/>
-          </TimelineContent>
-        </div>
-        <TimelineContent animationNum={0} timelineRef={aboutRef}>
-          <Image
-            src="/assets/image/Vai_Tro/KetNoi/anh2.jpg"
-            className="w-full h-96  object-cover rounded-md "
-            alt=""
-            width={500}
-            height={500}
-          />
-        </TimelineContent>
-      </section>*/}
     </>
   );
 }

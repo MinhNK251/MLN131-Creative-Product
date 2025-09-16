@@ -61,36 +61,36 @@ export default function OpinionSection(): JSX.Element {
             <div className="grid gap-8 w-full lg:w-1/2 py-8 lg:py-0">
               {[
                 {
-                  bg: "bg-green-500",
+                  bg: "bg-red-500",
                   rotate: "rotate-6",
                   title: "🏭 Gắn liền với công nghiệp hiện đại",
-                  image: "phantich1.jpg",
+                  image: "technology.png",
                 },
                 {
-                  bg: "bg-red-400",
+                  bg: "bg-green-400",
                   rotate: "-rotate-6",
                   title: "⚒️ Sản xuất ra của cải vật chất",
-                  image: "phantich2.jpg",
+                  image: "cultivation.jpg",
                 },
                 {
                   bg: "bg-orange-400",
                   rotate: "rotate-5",
                   title:
                     "🚫 Không sở hữu tư liệu sản xuất",
-                  image: "phantich3.jpg",
+                  image: "no-production.jpg",
                 },
                 {
                   bg: "bg-blue-400",
                   rotate: "-rotate-5",
                   title: "💰 Bị bóc lột giá trị thặng dư",
-                  image: "phantich4.jpg",
+                  image: "surplus-value.jpg",
                 },
                 {
                   bg: "bg-purple-400",
                   rotate: "rotate-6",
                   title:
                     "⚡ Mâu thuẫn thúc đẩy đấu tranh giai cấp",
-                  image: "phantich5.jpg",
+                  image: "revolution.jpg",
                 },
 
                 // ... Thêm các phần tử khác tương tự

@@ -35,6 +35,11 @@ const navigation = [
     label: "Cơ hội và thách thức",
     hrefs: ["#opportunities-challenges"],
   },
+  {
+    id: "chat",
+    label: "AI Chat",
+    hrefs: ["#chat"],
+  },
   // {
   //   id: "conclusion",
   //   label: "Kết luận",
@@ -72,7 +77,7 @@ export function SiteHeader() {
           <div className="flex items-center">
             <Link
               href="/"
-              className="flex items-center space-x-2 text-green-500"
+              className="flex items-center space-x-2 text-yellow-500"
             >
               <div className="h-10 w-10 rounded-full bg-navy-blue overflow-hidden">
                 <Image
@@ -80,7 +85,7 @@ export function SiteHeader() {
                   width={40}
                   height={40}
                   alt="Logo"
-                  src="/assets/image/logo.jpg"
+                  src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Lenin-Silhoutte_.svg"
                 />
               </div>
               <span className="font-bold  sm:inline">MLN131 - SE1735 - Team 1</span>
