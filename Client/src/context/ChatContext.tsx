@@ -16,7 +16,13 @@ interface ChatContextType {
 const ChatContext = createContext<ChatContextType | null>(null);
 
 export const ChatProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [messages, setMessages] = useState<ChatMessage[]>([
+    {
+      sender: "ai",
+      text: "Xin chào, tôi là AI Chatbot chuyên trả lời những câu hỏi về Quan điểm cơ bản của chủ nghĩa Mác-Lênin về giai cấp công nhân và sứ mệnh lịch sử của giai cấp công nhân",
+      createdAt: new Date().toISOString(),
+    },
+  ]);
 
   const sendMessage = async (text: string) => {
     // Add user message to state

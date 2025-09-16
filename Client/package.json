@@ -29,6 +29,7 @@
     "react-dom": "^18.2.0",
     "react-element-to-jsx-string": "^15.0.0",
     "react-hot-toast": "^2.6.0",
+    "react-markdown": "^10.1.0",
     "sass": "^1.83.1",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7"

@@ -1,5 +1,8 @@
 import axios from "axios";
 
+const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+axios.defaults.baseURL = backendUrl;
+
 export interface SendMessageRequest {
   message: string;
 }
@@ -11,7 +14,7 @@ export async function sendMessageApi(
   payload: SendMessageRequest
 ): Promise<SendMessageResponse> {
   const { data } = await axios.post<SendMessageResponse>(
-    "http://localhost:5000/api/messages/send",
+    "/api/messages/send",
     payload
   );
   return data;

@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
-import { formatMessageTime } from "../lib/utils";
 import toast from "react-hot-toast";
 import { useChatContext } from "@/context/ChatContext";
+import ReactMarkdown from "react-markdown";
 
 const ChatContainer = () => {
   const { sendMessage, messages } = useChatContext();
@@ -34,9 +34,12 @@ const ChatContainer = () => {
   };
 
   return (
-    <div className="h-[600px] relative bg-gray-900 rounded-2xl">
+    <div className="h-[550px] relative bg-gray-900 rounded-2xl pt-6">
       {/* Chat area */}
-      <div ref={messagesContainerRef} className="flex flex-col h-[calc(100%-80px)] overflow-y-scroll p-3 pb-6">
+      <div ref={messagesContainerRef}
+        className="flex flex-col h-[calc(100%-80px)] overflow-y-scroll p-3 pb-6"
+        onWheel={(e) => e.stopPropagation()}
+        >
         {messages.map((msg, index) => (
           <div
             key={index}
@@ -44,24 +47,41 @@ const ChatContainer = () => {
               msg.sender === "user" ? "justify-end" : "justify-start"
             }`}
           >
+            {msg.sender === "ai" && (
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Lenin-Silhoutte_.svg" // replace with your AI icon path
+                alt="AI"
+                className="w-6 h-6 rounded-full self-end"
+              />
+            )}
             <div
-              className={`p-2 max-w-[250px] md:text-sm font-light rounded-lg break-words text-white ${
+              className={`p-2 max-w-[350px] md:text-sm font-light rounded-lg break-words text-white ${
                 msg.sender === "user"
                   ? "bg-violet-500/30 rounded-br-none"
-                  : "bg-gray-700 rounded-bl-none"
+                  : "lg:max-w-[550px] bg-gray-700 rounded-bl-none"
               }`}
             >
-              {msg.text}
+              <ReactMarkdown>{msg.text}</ReactMarkdown>
             </div>
-            <div className="text-center text-xs text-gray-500">
-              <p>{formatMessageTime(msg.createdAt)}</p>
-            </div>
+            {msg.sender === "user" && (
+              <img
+                src="/assets/image/user-avatar.png"
+                alt="User"
+                className="w-6 h-6 rounded-full self-end"
+              />
+            )}
+            
           </div>
         ))}
         {isLoading && (
           <div className="flex items-end gap-2 mb-4 justify-start">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Lenin-Silhoutte_.svg"
+              alt="AI"
+              className="w-6 h-6 rounded-full self-end"
+            />
             <div className="p-2 max-w-[250px] md:text-sm font-light rounded-lg break-words text-white bg-gray-700 rounded-bl-none">
-              Thinking...
+              Đang suy nghĩ...
             </div>
           </div>
         )}
@@ -84,7 +104,7 @@ const ChatContainer = () => {
           />
         </div>
         <button type="submit" disabled={isLoading}>
-          <img src="/assets/image/logo.jpg" alt="avatar" className="w-7 cursor-pointer" />
+          <img src="/assets/image/send_button.svg" alt="avatar" className="w-7 cursor-pointer" />
         </button>
       </form>
     </div>
